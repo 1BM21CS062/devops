@@ -21,7 +21,7 @@ jobs:
 
                               
     - name: Build Docker image
-      run: docker build -t ${{secrets.Dusername}}/weeeeb-php-env .
+      run: docker build -t ${{secrets.Dusername}}/devops-php-env .
 
     - name: Run Docker Compose
       run: docker-compose up --build -d
@@ -30,7 +30,7 @@ jobs:
       run: sleep 10  # Adjust the wait time as needed
       
     - name: Push Docker Image
-      run: docker push ${{secrets.Dusername}}/weeeeb-php-env:latest
+      run: docker push ${{secrets.Dusername}}/devops-php-env:latest
 
     - name: Stop Docker Compose
       run: docker-compose down
